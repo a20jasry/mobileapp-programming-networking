@@ -22,8 +22,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<Mountain> mountains;
-    private ArrayAdapter<Mountain> Mountains;
+    private ArrayList<Mountain> items;
+    private ArrayAdapter<Mountain> adapter;
     ;
 
 
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         ListView my_listview = (findViewById(R.id.list_item_text_view)); // Get a reference to our ListView
-        my_listview.setAdapter(Mountains); // Connect ArrayAdapter to ListView
-        Mountains = new ArrayAdapter<Mountain>(this, R.layout.list_item_text_view); // create an ArrayAdapter
+        my_listview.setAdapter(adapter); // Connect ArrayAdapter to ListView
+        adapter = new ArrayAdapter<Mountain>(this, R.layout.list_item_text_view); // create an ArrayAdapter
 
         my_listview.setOnClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         private HttpURLConnection connection = null;
         private BufferedReader reader = null;
 
-        protected String doInBackground(String... params) {
+        protected String doInBackground(String... params) { // this happends in the bacground
             try {
                 URL url = new URL(params[0]);
                 connection = (HttpURLConnection) url.openConnection();
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String json) {
+        protected void onPostExecute(String json) { // put all you kode here
             Log.d("TAG", json);
         }//onPostExecute
 
