@@ -1,15 +1,11 @@
 package com.example.networking;
 
-public class Mountain<String> {
+public class Mountain<string> {
     private String name;
-    private String type;
-    private String company;
     private String location;
-    private String category;
     private int size;
-    private String cost;
 
-}
+
 
     public Mountain(String name, int size, String location){
         this.name = name;
@@ -21,7 +17,7 @@ public class Mountain<String> {
         return this.name;
     }
 
-    public int getHeight(String size){
+    public int getSize(String size){
         return this.size;
     }
 
@@ -31,8 +27,11 @@ public class Mountain<String> {
 
 
     @Override
-    public String toString(){
-        return name;
-    }
+    public String toString() { return name; }
+
+
+}
+
+
 
 
