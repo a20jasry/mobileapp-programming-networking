@@ -43,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
+                String name = items.get(position).getName("name");
+                int size = items.get(position).getSize("size");
+                String location = items.get(position).getLocation("location");
+                String msg = name + " it's about " + size + " meter. " + "location: " + location + ".";
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
             }
         });//  OnItemClickListener
 
